@@ -1,0 +1,15 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        hash={};
+        for i in range(len(nums)):
+            hash[i]=nums.index(i);
+            complement = target-i;
+            if complement in hash and nums.index(i) != nums.index(complement):
+                return[nums.index(i),nums.index(complement)];
+            break;
+            
