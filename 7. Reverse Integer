@@ -1,0 +1,22 @@
+class Solution:
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        numabs=str(abs(x));
+        revnumabs="";
+        for i in range(len(numabs)):
+            revnumabs=numabs[i]+revnumabs;
+        if revnumabs == "":
+            return "no number entered";
+        if x<0:
+            revnum="-"+revnumabs;
+        else:
+            revnum=revnumabs;
+        revx=int(revnum);
+        if revx > (2**31)-1 or revx < -(2**31):
+            revx=0;
+        return revx;
+            
+        
