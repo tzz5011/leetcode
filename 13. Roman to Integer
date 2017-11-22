@@ -1,0 +1,16 @@
+class Solution:
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        int=0;
+        roman=s+' '
+        dict = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000,' ':0};
+        for i in range(len(s)):
+            if dict[roman[i]]<dict[roman[i+1]]:
+                int=int-dict[roman[i]]
+            if dict[roman[i]]<dict[roman[i+1]]:
+                int=int+dict[roman[i]]
+        return int
+            
