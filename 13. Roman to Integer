@@ -10,7 +10,7 @@ class Solution:
         for i in range(len(s)):
             if dict[roman[i]]<dict[roman[i+1]]:
                 int=int-dict[roman[i]]
-            if dict[roman[i]]<dict[roman[i+1]]:
+            else:
                 int=int+dict[roman[i]]
         return int
             
