@@ -1,0 +1,27 @@
+class Solution:
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+        pref = ''
+        indexminlength=0
+        if strs == []:
+            return pref
+        if len(strs)==1:
+            return strs[0]
+        strlen=[]
+        for word in strs:
+            strlen.append(len(word))
+            if word == "":
+                return ""
+        indexminlength=strlen.index(min(strlen))
+        for i in range(len(strs[indexminlength])):
+            for j in range(len(strs)-1):
+                if strs[j][i] != strs[j+1][i]:
+                    return pref
+            pref=pref+strs[indexminlength][i]
+            if i == len(strs[indexminlength])-1:
+                return pref
+        
+        
