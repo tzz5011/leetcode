@@ -5,14 +5,12 @@ class Solution:
         :rtype: bool
         """
         while True:
-   #         if s.find("()") != -1:
-            s.replace("()","")
-     #       if s.find("[]") != -1:
-            s.replace("[]","")
-     #       if s.find("{}") != -1:
-            s.replace("{}","")
+            s=s.replace("()","")
+            s=s.replace("[]","")
+            s=s.replace("{}","")
             if s=="":
                 return True
+                break
             if s.find("()") == -1 and s.find("[]") == -1 and s.find("{}") == -1:
                 return False
-        
+                break
