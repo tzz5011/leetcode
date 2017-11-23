@@ -1,0 +1,18 @@
+class Solution:
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        while True:
+   #         if s.find("()") != -1:
+            s.replace("()","")
+     #       if s.find("[]") != -1:
+            s.replace("[]","")
+     #       if s.find("{}") != -1:
+            s.replace("{}","")
+            if s=="":
+                return True
+            if s.find("()") == -1 and s.find("[]") == -1 and s.find("{}") == -1:
+                return False
+        
