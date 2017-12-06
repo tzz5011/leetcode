@@ -1,0 +1,15 @@
+class Solution:
+    def plusOne(self, digits):
+        """
+        :type digits: List[int]
+        :rtype: List[int]
+        """
+        num=""
+        for i in range(len(digits)):
+            num=num+str(digits[i])
+        result = str(int(num)+1)
+        newlist=[]
+        for j in range(len(result)):
+            newlist.append(int(result[j]))
+        return newlist
+        
