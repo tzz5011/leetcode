@@ -1,0 +1,15 @@
+class Solution:
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        """
+        lowprice = sys.maxsize
+        profit=0
+        for i in range(len(prices)):
+            if prices[i]<lowprice:
+                lowprice = prices[i]
+            if prices[i]-lowprice>profit:
+                profit = prices[i]-lowprice
+        return profit
+                
