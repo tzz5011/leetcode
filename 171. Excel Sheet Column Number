@@ -1,0 +1,16 @@
+class Solution:
+    def titleToNumber(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        numbers = []
+        result=0
+        if s == "":
+            return 0
+        for letter in s:
+            numbers.append(ord(letter)-64)
+        numbers.reverse()
+        for i in range(len(numbers)):
+            result += numbers[i]*(26**i)
+        return result
