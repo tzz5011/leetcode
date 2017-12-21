@@ -1,0 +1,9 @@
+class Solution:
+    def trailingZeroes(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if n == 0:
+            return 0
+        return self.trailingZeroes(n//5) + n//5
