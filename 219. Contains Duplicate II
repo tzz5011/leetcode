@@ -1,0 +1,14 @@
+class Solution:
+    def containsNearbyDuplicate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: bool
+        """
+        hashdict={};
+        for i, v in enumerate(nums):
+            if v in hashdict and i - hashdict[v] <=k:
+                return True
+            hashdict[v] = i
+        return False
+        
