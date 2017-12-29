@@ -1,0 +1,19 @@
+class Solution:
+        
+    def findTarget(self, root, k):
+        """
+        :type root: TreeNode
+        :type k: int
+        :rtype: bool
+        """
+        fromtree = [root]
+        cache = set()
+        for i in fromtree:
+            if k-i.val in cache:
+                return True
+            if i.left:
+                fromtree.append(i.left)
+            if i.right:
+                fromtree.append(i.right)
+            cache.add(i.val)
+        return False
