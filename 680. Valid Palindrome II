@@ -1,0 +1,22 @@
+class Solution:
+    def isPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        formatted = re.sub("[^0-9A-Za-z]","",s)
+        formatted = formatted.lower()
+        if len(formatted)==0 or len(formatted)==1:
+            return True
+        i,j=0,len(formatted)-1
+        while True:
+            if formatted[i]!=formatted[j]:
+                return False
+                break
+            elif i==j or j-i==1:
+                return True
+                break
+            else:
+                i+=1
+                j-=1
+                
