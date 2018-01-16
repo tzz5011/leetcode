@@ -1,0 +1,17 @@
+class Solution:
+    def isHappy(self, n):
+        """
+        :type n: int
+        :rtype: bool
+        """
+        seen = [];
+        while n != 1:
+            sum=0
+            for digit in str(n):
+                sum += int(digit)**2
+            if sum not in seen:
+                seen.append(sum)
+                n = sum
+            else: 
+                return False
+        return True
